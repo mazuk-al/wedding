@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -rlo \"pattern-en\\\\|pattern-kk\\\\|pattern-ru\\\\|soviet-carpet\\\\|kazakh-warm\\\\|siberian-blue\" --include=\"*.jsx\" --include=\"*.html\" --include=\"*.css\" .)",
+      "Bash(grep -n \"pattern-en.png\\\\|pattern-kk.png\\\\|pattern-ru.png\" *.jsx *.html *.css)",
+      "Bash(mkdir -p assets/photos)",
+      "Bash(cp uploads/wedding-invite/assets/IMG_0855.JPG assets/photos/)",
+      "Bash(cp uploads/wedding-invite/assets/IMG_6651.JPG assets/photos/)",
+      "Bash(mkdir -p css js)",
+      "Bash(command -v git)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
+    ]
+  }
+}

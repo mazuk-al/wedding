@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexandr & Adina | Wedding</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500&family=Great+Vibes&display=swap"
+        rel="stylesheet">
+</head>
+
+<body data-theme="kz">
+
+    <!-- Header / Lang Switcher -->
+    <header>
+        <div class="lang-switch">
+            <button onclick="setTheme('kz')" class="lang-btn active" data-lang="kz">KZ</button>
+            <button onclick="setTheme('ru')" class="lang-btn" data-lang="ru">RU</button>
+            <button onclick="setTheme('en')" class="lang-btn" data-lang="en">EN</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. HERO -->
+        <section id="hero" class="hero">
+            <div class="hero-bg"></div>
+            <div class="container fade-in">
+                <p class="hero-intro" data-i18n="heroIntro">Мы женимся</p>
+                <h1 class="hero-names" data-i18n="names">Alexandr & Adina</h1>
+                <p class="hero-date" data-i18n="heroDate">15 сентября 2024</p>
+                <p class="hero-city" data-i18n="heroCity">Алматы</p>
+                <a href="#rsvp" class="btn-primary" data-i18n="heroBtn">Подтвердить участие</a>
+            </div>
+        </section>
+
+        <!-- 2. ABOUT US -->
+        <section id="about" class="section">
+            <div class="container fade-in">
+                <h2 data-i18n="aboutTitle">О нас</h2>
+                <div class="about-content">
+                    <p data-i18n="aboutText">
+                        Мы рады пригласить вас разделить с нами этот особенный день.
+                        История нашей любви привела нас к этому моменту, и мы хотим отпраздновать его в кругу самых
+                        близких.
+                    </p>
+                    <div class="photo-grid">
+                        <img src="assets/IMG_0855.JPG" alt="Alexandr & Adina 1" class="about-photo">
+                        <img src="assets/IMG_6651.JPG" alt="Alexandr & Adina 2" class="about-photo">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. TIMING -->
+        <section id="timing" class="section">
+            <div class="container fade-in">
+                <h2 data-i18n="timingTitle">Тайминг дня</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="time">16:00</span>
+                        <span class="event" data-i18n="timeGuests">Сбор гостей</span>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time">17:00</span>
+                        <span class="event" data-i18n="timeCeremony">Церемония</span>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time">18:00</span>
+                        <span class="event" data-i18n="timeBanquet">Банкет</span>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time">22:00</span>
+                        <span class="event" data-i18n="timeCake">Торт</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. LOCATION -->
+        <section id="location" class="section">
+            <div class="container fade-in">
+                <h2 data-i18n="locationTitle">Локация</h2>
+                <p class="location-name" data-i18n="locationName">Qorzhyn Grand</p>
+                <p class="location-address" data-i18n="locationAddress">Улица Балбырауын, 2А</p>
+                <div class="map-placeholder">
+                    <!-- Yandex Maps Embed -->
+                    <iframe
+                        src="https://yandex.kz/map-widget/v1/org/qorzhyn_grand/112095121468/?ll=76.839595%2C43.185659&utm_source=share&z=18"
+                        width="100%" height="450" frameborder="0" allowfullscreen="true"
+                        style="position:relative; border-radius: var(--border-radius); border: 0;"
+                        loading="lazy"></iframe>
+                </div>
+                <a href="https://yandex.kz/maps/ru/-/CPatuKli" target="_blank" class="btn-secondary"
+                    data-i18n="btnMap">Открыть в картах</a>
+            </div>
+        </section>
+
+        <!-- 5. DRESS CODE -->
+        <section id="dresscode" class="section">
+            <div class="container fade-in">
+                <h2 data-i18n="dresscodeTitle">Дресс-код</h2>
+                <p data-i18n="dresscodeText">Black Tie Optional. Просим дам выбрать платья в пастельных тонах.</p>
+                <div class="palette">
+                    <div class="swatch" style="background: #E6D7C3"></div>
+                    <div class="swatch" style="background: #D4AF37"></div>
+                    <div class="swatch" style="background: #A8C8E6"></div>
+                    <div class="swatch" style="background: #F0E68C"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. RSVP -->
+        <section id="rsvp" class="section">
+            <div class="container fade-in">
+                <h2 data-i18n="rsvpTitle">RSVP</h2>
+                <p data-i18n="rsvpText">Пожалуйста, подтвердите ваше присутствие до 1 сентября.</p>
+
+                <form id="rsvp-form" onsubmit="submitForm(event)">
+                    <div class="form-group">
+                        <label for="name" data-i18n="formName">Имя и Фамилия</label>
+                        <input type="text" id="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label data-i18n="formAttendance">Планируете ли вы быть?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="attendance" value="yes" checked> <span
+                                    data-i18n="formYes">С удовольствием приду</span></label>
+                            <label><input type="radio" name="attendance" value="no"> <span data-i18n="formNo">К
+                                    сожалению, не смогу</span></label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="guests" data-i18n="formGuests">Количество персон</label>
+                        <select id="guests">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comment" data-i18n="formComment">Комментарий / Аллергии</label>
+                        <textarea id="comment" rows="3"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary" data-i18n="formSubmit">Отправить</button>
+                    <!-- Integration Stub: Connect to Google Sheets or Supabase API here -->
+                </form>
+            </div>
+        </section>
+
+        <!-- 7. FAQ -->
+        <section id="faq" class="section">
+            <div class="container fade-in">
+                <h2 data-i18n="faqTitle">FAQ</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3 data-i18n="faq1Q">Можно ли с детьми?</h3>
+                        <p data-i18n="faq1A">Мы очень любим детей, но формат вечера предполагает присутствие только
+                            взрослых.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3 data-i18n="faq2Q">Что дарить?</h3>
+                        <p data-i18n="faq2A">Ваше присутствие - главный подарок. Но если вы хотите нас поздравить, мы
+                            будем рады вкладу в наше будущее.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. CONTACTS -->
+        <section id="contacts" class="section">
+            <div class="container fade-in">
+                <h2 data-i18n="contactsTitle">Контакты</h2>
+                <p data-i18n="contactsText">Если у вас возникли вопросы, свяжитесь с нашим организатором:</p>
+                <a href="#" class="contact-link">WhatsApp: +7 777 777 77 77</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Alexandr & Adina &copy; 2024</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
