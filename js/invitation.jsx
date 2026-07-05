@@ -14,20 +14,12 @@ const I18N = {
     venueLine2: "Алматы, Қазақстан",
     countdownTitle: "Тойға дейін қалды",
     units: { days: "күн", hours: "сағат", minutes: "минут", seconds: "секунд" },
-    storyTitle: "Біздің тарихымыз",
-    storyItems: [
-      { year: "2019", title: "Танысу", text: "Достардың кешінде кездестік — әңгімеміз таңға дейін созылды." },
-      { year: "2021", title: "Алғашқы саяхат", text: "Шарын каньонына бірге барып, бір-бірімізді шынайы көрдік." },
-      { year: "2024", title: "Ұсыныс", text: "Көктем кеші, Көк-Төбе. Жұлдызды аспан куә болды." },
-      { year: "2026", title: "Той", text: "Жақын адамдарымызбен бірге өзіміздің жаңа басталымызды атап өтеміз." }
-    ],
     locationTitle: "Орналасуы",
     locationDesc: "Тойымыз Qorzhyn Grand мерекелік залында өтеді. Қалаға кіреберіс, парковка тегін.",
-    address: "Әл-Фараби даңғылы, 77, Алматы",
+    address: "Құрамыс ш/а, Балбырауын көшесі, 2А, Алматы",
     mapLink: "Картадан көру",
     dressTitle: "Дресс-код",
-    dressDesc: "Терракот, кілегей, қою көк түстер. Талғампаз классика.",
-    dressColors: ["Терракот", "Кілегей", "Көк сия"],
+    dressDesc: "Қатаң дресс-код жоқ. Егер сізде қазақ немесе орыс ұлттық киімі болса — оны киіп келгеніңізге өте қуанамыз.",
     galleryTitle: "Бірге",
     rsvpTitle: "Қатысуыңызды растаңыз",
     rsvpDesc: "Кештің ұйымдастырылуы үшін 5 қыркүйекке дейін жауап бересіз бе?",
@@ -35,13 +27,12 @@ const I18N = {
     rsvpAttend: "Қатысамын",
     rsvpDecline: "Келе алмаймын",
     rsvpPlus: "Жұбайыммен/қонағыммен бірге",
-    rsvpMessage: "Жұптарға тілек (қажет болса)",
+    rsvpMessage: "Пікір (қаласаңыз)",
     rsvpSubmit: "Жіберу",
     rsvpThanks: "Рақмет! Жауабыңыз қабылданды.",
     contactsTitle: "Сұрақтарыңыз болса",
     contacts: [
-      { role: "Той ұйымдастырушысы", name: "Айгерім", phone: "+7 700 123 45 67" },
-      { role: "Куә", name: "Дамир", phone: "+7 701 234 56 78" }
+      { role: "Жүргізуші", name: "Назарбек", phone: "+7 705 116 85 59" }
     ],
     footer: "Сіздерді көргенімізге қуаныштымыз"
   },
@@ -59,20 +50,12 @@ const I18N = {
     venueLine2: "Алматы, Казахстан",
     countdownTitle: "До свадьбы осталось",
     units: { days: "дней", hours: "часов", minutes: "минут", seconds: "секунд" },
-    storyTitle: "Наша история",
-    storyItems: [
-      { year: "2019", title: "Знакомство", text: "Встретились у общих друзей — разговор затянулся до утра." },
-      { year: "2021", title: "Первое путешествие", text: "Поехали в Чарынский каньон и увидели друг друга по-настоящему." },
-      { year: "2024", title: "Предложение", text: "Весенний вечер на Кок-Тобе. Звёздное небо было свидетелем." },
-      { year: "2026", title: "Свадьба", text: "Празднуем начало общей жизни в кругу близких." }
-    ],
     locationTitle: "Где",
     locationDesc: "Свадьба пройдёт в банкетном зале Qorzhyn Grand. Удобный въезд, бесплатная парковка.",
-    address: "проспект Аль-Фараби, 77, Алматы",
+    address: "мкр. Курамыс, ул. Балбырауын, 2А, Алматы",
     mapLink: "Открыть на карте",
     dressTitle: "Дресс-код",
-    dressDesc: "Терракот, кремовый, тёмно-синий. Сдержанная классика.",
-    dressColors: ["Терракот", "Кремовый", "Чернильный"],
+    dressDesc: "Строгого дресс-кода нет. Если у вас есть казахский или русский национальный наряд — будем очень рады видеть вас в нём.",
     galleryTitle: "Вместе",
     rsvpTitle: "Подтвердите присутствие",
     rsvpDesc: "Чтобы мы всё правильно организовали, ответьте, пожалуйста, до 5 сентября.",
@@ -80,13 +63,12 @@ const I18N = {
     rsvpAttend: "Буду",
     rsvpDecline: "Не смогу",
     rsvpPlus: "Приду с парой / +1",
-    rsvpMessage: "Пожелания паре (по желанию)",
+    rsvpMessage: "Комментарий (по желанию)",
     rsvpSubmit: "Отправить",
     rsvpThanks: "Спасибо! Ваш ответ принят.",
     contactsTitle: "Если есть вопросы",
     contacts: [
-      { role: "Координатор", name: "Айгерим", phone: "+7 700 123 45 67" },
-      { role: "Свидетель", name: "Дамир", phone: "+7 701 234 56 78" }
+      { role: "Ведущий", name: "Назарбек", phone: "+7 705 116 85 59" }
     ],
     footer: "Будем рады вас видеть"
   },
@@ -99,25 +81,17 @@ const I18N = {
     and: "&",
     saveTheDate: "Save the date",
     fullDate: "Saturday, 26 September 2026",
-    time: "5:00 PM",
+    time: "5:30 PM",
     venueLine1: "Qorzhyn Grand",
     venueLine2: "Almaty, Kazakhstan",
     countdownTitle: "Until the wedding",
     units: { days: "days", hours: "hours", minutes: "minutes", seconds: "seconds" },
-    storyTitle: "Our story",
-    storyItems: [
-      { year: "2019", title: "We met", text: "At a friends' gathering — and talked till dawn." },
-      { year: "2021", title: "First trip", text: "Charyn Canyon, where we truly saw each other." },
-      { year: "2024", title: "The proposal", text: "A spring evening on Kok-Tobe, with the stars as witnesses." },
-      { year: "2026", title: "Wedding", text: "Celebrating the start of our life together with those we love." }
-    ],
     locationTitle: "Where",
     locationDesc: "The wedding will be at Qorzhyn Grand. Easy access, free parking.",
-    address: "77 Al-Farabi Avenue, Almaty",
+    address: "2A Balbyrauyn St, Kuramys, Almaty",
     mapLink: "Open in maps",
     dressTitle: "Dress code",
-    dressDesc: "Terracotta, cream, deep blue. Quiet classic.",
-    dressColors: ["Terracotta", "Cream", "Ink"],
+    dressDesc: "There's no strict dress code. If you have a Kazakh or Russian national costume, we'd love to see you wearing it.",
     galleryTitle: "Together",
     rsvpTitle: "Please RSVP",
     rsvpDesc: "So we can plan well, please reply by September 5th.",
@@ -125,20 +99,28 @@ const I18N = {
     rsvpAttend: "I'll be there",
     rsvpDecline: "Can't make it",
     rsvpPlus: "Bringing a +1",
-    rsvpMessage: "A note for the couple (optional)",
+    rsvpMessage: "Comment (optional)",
     rsvpSubmit: "Send",
     rsvpThanks: "Thank you! Your reply is in.",
     contactsTitle: "Questions?",
     contacts: [
-      { role: "Coordinator", name: "Aigerim", phone: "+7 700 123 45 67" },
-      { role: "Best man", name: "Damir", phone: "+7 701 234 56 78" }
+      { role: "Host", name: "Narazbek", phone: "+7 705 116 85 59" }
     ],
     footer: "Can't wait to see you"
   }
 };
 
 // Wedding date (used for countdown)
-const WEDDING_DATE = new Date("2026-09-26T17:00:00+06:00");
+const WEDDING_DATE = new Date("2026-09-26T17:00:00+05:00");
+
+// RSVP responses are saved into a Google Sheet via this Google Form
+const RSVP_FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLScO1VUDdq0OYDQy26rTN3kDq_-pYIt5onN79vrPwpmp29iqSg/formResponse";
+const RSVP_FORM_ENTRIES = {
+  name: "entry.700012392",
+  attend: "entry.284942103",
+  plusOne: "entry.1510766542",
+  comment: "entry.1597670396",
+};
 
 // Default accents per language (can be overridden by tweaks)
 const DEFAULT_ACCENTS = {
@@ -223,96 +205,57 @@ function Countdown({ t, accent }) {
   );
 }
 
-function Timeline({ t, accent }) {
-  return (
-    <section className="timeline" style={{"--accent": accent}}>
-      <SectionTitle small="01">{t.storyTitle}</SectionTitle>
-      <ol className="tl-list">
-        {t.storyItems.map((it, i) => (
-          <li key={i} className="tl-item">
-            <div className="tl-year">{it.year}</div>
-            <div className="tl-content">
-              <h3 className="tl-title">{it.title}</h3>
-              <p className="tl-text">{it.text}</p>
-            </div>
-          </li>
-        ))}
-      </ol>
-    </section>
-  );
-}
-
 function Location({ t, accent }) {
   return (
     <section className="location" style={{"--accent": accent}}>
-      <SectionTitle small="02">{t.locationTitle}</SectionTitle>
+      <SectionTitle small="01">{t.locationTitle}</SectionTitle>
       <div className="loc-grid">
         <div className="loc-text">
           <h3 className="loc-venue">{t.venueLine1}</h3>
           <p className="loc-desc">{t.locationDesc}</p>
           <p className="loc-address">{t.address}</p>
-          <a className="link-arrow" href="#" onClick={e=>e.preventDefault()}>{t.mapLink} <span>→</span></a>
+          <a className="link-arrow" href="https://yandex.kz/maps/ru/-/CTepnX6X" target="_blank" rel="noopener noreferrer">{t.mapLink} <span>→</span></a>
         </div>
         <div className="loc-map" aria-label="Map">
-          {/* stylized map placeholder — abstract grid w/ pin */}
-          <svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg">
-            <rect width="320" height="220" fill="#ECE3D2"/>
-            <g stroke="#C8BAA0" strokeWidth="0.8" fill="none">
-              {Array.from({length:14}).map((_,i)=>(<line key={"h"+i} x1="0" y1={i*16+8} x2="320" y2={i*16+8}/>))}
-              {Array.from({length:20}).map((_,i)=>(<line key={"v"+i} x1={i*16+8} y1="0" x2={i*16+8} y2="220"/>))}
-            </g>
-            <path d="M 0 130 Q 80 100 160 130 T 320 110" stroke="#B5A37F" strokeWidth="6" fill="none" opacity="0.55"/>
-            <path d="M 40 0 L 60 220" stroke="#B5A37F" strokeWidth="3" fill="none" opacity="0.4"/>
-            <path d="M 240 0 L 260 220" stroke="#B5A37F" strokeWidth="3" fill="none" opacity="0.4"/>
-            {/* pin */}
-            <g transform="translate(160 110)">
-              <circle r="22" fill={accent} opacity="0.18"/>
-              <circle r="12" fill={accent} opacity="0.30"/>
-              <path d="M 0 -14 C 8 -14 12 -8 12 -2 C 12 6 0 18 0 18 C 0 18 -12 6 -12 -2 C -12 -8 -8 -14 0 -14 Z" fill={accent}/>
-              <circle r="3.5" fill="#F5EFE4" cy="-3"/>
-            </g>
-          </svg>
+          <iframe
+            src="https://yandex.kz/map-widget/v1/org/qorzhyn_grand/112095121468/?ll=76.848706%2C43.187490&z=17"
+            title="Qorzhyn Grand — карта проезда"
+            loading="lazy"
+            allowFullScreen
+            frameBorder="0"
+          />
         </div>
       </div>
     </section>
   );
 }
 
-function Dress({ t, accent, lang }) {
-  // swatch colors mapped per-language to feel right
-  const swatches = {
-    kk: ["#B05E3B", "#F0E6D2", "#23304D"],
-    ru: ["#2E4A7A", "#F0E6D2", "#3A2A4D"],
-    en: ["#7A2E2E", "#F0E6D2", "#1E2E2E"]
-  }[lang];
+function Dress({ t, accent }) {
   return (
     <section className="dress" style={{"--accent": accent}}>
-      <SectionTitle small="03">{t.dressTitle}</SectionTitle>
+      <SectionTitle small="02">{t.dressTitle}</SectionTitle>
       <p className="dress-desc">{t.dressDesc}</p>
-      <div className="swatches">
-        {swatches.map((c,i)=>(
-          <div className="swatch" key={i}>
-            <div className="sw-color" style={{background: c}}/>
-            <div className="sw-name">{t.dressColors[i]}</div>
-          </div>
-        ))}
-      </div>
     </section>
   );
 }
 
 function Gallery({ t }) {
-  // 6 placeholder slots — abstract cropped frames
-  const aspects = [4/5, 1, 4/5, 1, 4/5, 1];
+  const names = t.names.join(" & ");
+  const photos = [
+    "assets/photos/IMG_6651.JPG",
+    "assets/photos/photo_2026-07-04%2019.11.15.jpeg",
+    "assets/photos/2026-07-04%2018.20.44.jpg",
+    "assets/photos/2026-07-04%2018.20.53.jpg",
+    "assets/photos/photo_2026-07-04%2019.11.48.jpeg",
+    "assets/photos/photo_2026-07-04%2019.12.26.jpeg",
+  ];
   return (
     <section className="gallery">
-      <SectionTitle small="04">{t.galleryTitle}</SectionTitle>
+      <SectionTitle small="03">{t.galleryTitle}</SectionTitle>
       <div className="gal-grid">
-        {aspects.map((a, i) => (
-          <div key={i} className={"gal-cell gal-" + (i%3)} style={{aspectRatio: a}}>
-            <div className="gal-ph">
-              <span className="gal-num">{String(i+1).padStart(2,"0")}</span>
-            </div>
+        {photos.map((src, i) => (
+          <div key={i} className="gal-cell">
+            <img src={src} alt={names} loading="lazy"/>
           </div>
         ))}
       </div>
@@ -323,23 +266,41 @@ function Gallery({ t }) {
 function RSVP({ t, accent }) {
   const [submitted, setSubmitted] = React.useState(false);
   const [attend, setAttend] = React.useState(null);
+  const nameRef = React.useRef(null);
+  const plusRef = React.useRef(null);
+  const commentRef = React.useRef(null);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (!attend) return;
+    const body = new URLSearchParams();
+    body.append(RSVP_FORM_ENTRIES.name, nameRef.current.value.trim());
+    body.append(RSVP_FORM_ENTRIES.attend, attend === "yes" ? "Буду" : "Не буду");
+    if (plusRef.current.checked) body.append(RSVP_FORM_ENTRIES.plusOne, "Приду с гостем");
+    const comment = commentRef.current.value.trim();
+    if (comment) body.append(RSVP_FORM_ENTRIES.comment, comment);
+
+    fetch(RSVP_FORM_ACTION, { method: "POST", mode: "no-cors", body }).catch(() => {});
+    setSubmitted(true);
+  }
+
   if (submitted) {
     return (
       <section className="rsvp rsvp-done" style={{"--accent": accent}}>
         <div className="rsvp-thanks">
-          <SectionTitle small="05">{t.rsvpThanks}</SectionTitle>
+          <SectionTitle small="04">{t.rsvpThanks}</SectionTitle>
         </div>
       </section>
     );
   }
   return (
     <section className="rsvp" style={{"--accent": accent}}>
-      <SectionTitle small="05">{t.rsvpTitle}</SectionTitle>
+      <SectionTitle small="04">{t.rsvpTitle}</SectionTitle>
       <p className="rsvp-desc">{t.rsvpDesc}</p>
-      <form className="rsvp-form" onSubmit={e=>{e.preventDefault(); setSubmitted(true);}}>
+      <form className="rsvp-form" onSubmit={handleSubmit}>
         <label className="field">
           <span className="field-label">{t.rsvpName}</span>
-          <input type="text" required placeholder="—"/>
+          <input ref={nameRef} type="text" required placeholder="—"/>
         </label>
         <div className="attend-group">
           <button type="button" className={"attend-btn " + (attend==="yes"?"is-on":"")} onClick={()=>setAttend("yes")}>
@@ -350,12 +311,12 @@ function RSVP({ t, accent }) {
           </button>
         </div>
         <label className="checkbox">
-          <input type="checkbox"/>
+          <input ref={plusRef} type="checkbox"/>
           <span>{t.rsvpPlus}</span>
         </label>
         <label className="field">
           <span className="field-label">{t.rsvpMessage}</span>
-          <textarea rows="3" placeholder="—"/>
+          <textarea ref={commentRef} rows="3" placeholder="—"/>
         </label>
         <button type="submit" className="submit-btn">{t.rsvpSubmit} <span>→</span></button>
       </form>
@@ -366,7 +327,7 @@ function RSVP({ t, accent }) {
 function Contacts({ t, accent }) {
   return (
     <section className="contacts" style={{"--accent": accent}}>
-      <SectionTitle small="06">{t.contactsTitle}</SectionTitle>
+      <SectionTitle small="05">{t.contactsTitle}</SectionTitle>
       <ul className="contacts-list">
         {t.contacts.map((c,i)=>(
           <li key={i} className="contact-row">
@@ -459,9 +420,8 @@ function Invitation({ variant = "A", density = 1, accentOverrides = {}, initialL
       </section>
 
       <Countdown t={t} accent={accent}/>
-      <Timeline t={t} accent={accent}/>
       <Location t={t} accent={accent}/>
-      <Dress t={t} accent={accent} lang={lang}/>
+      <Dress t={t} accent={accent}/>
       <Gallery t={t}/>
       <RSVP t={t} accent={accent}/>
       <Contacts t={t} accent={accent}/>

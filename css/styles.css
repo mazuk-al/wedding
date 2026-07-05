@@ -110,45 +110,21 @@ body, html { margin: 0; padding: 0; }
   position: absolute;
   inset: 0;
 }
-.hero-pattern-fade {
+.hero-pattern-fade,
+.hero-bg-kk + .hero-pattern-fade,
+.hero-pattern:has(.hero-bg-kk) .hero-pattern-fade,
+.hero-pattern:has(.hero-bg-ru) .hero-pattern-fade,
+.hero-pattern:has(.hero-bg-en) .hero-pattern-fade {
+  /* Same, strong cream wash for every language so text stays readable
+     regardless of how busy that language's pattern is. */
   position: absolute;
   inset: 0;
-  /* Soft cream wash that lets the pattern show but keeps a readable zone for text */
   background:
     radial-gradient(
-      ellipse 70% 55% at 50% 50%,
-      color-mix(in oklab, var(--bg) 78%, transparent) 0%,
-      color-mix(in oklab, var(--bg) 50%, transparent) 45%,
-      color-mix(in oklab, var(--bg) 25%, transparent) 100%
-    );
-}
-/* per-language overlay strength */
-.hero-bg-kk + .hero-pattern-fade,
-.hero-pattern:has(.hero-bg-kk) .hero-pattern-fade {
-  background:
-    radial-gradient(
-      ellipse 70% 55% at 50% 50%,
-      color-mix(in oklab, var(--bg) 70%, transparent) 0%,
-      color-mix(in oklab, var(--bg) 35%, transparent) 50%,
-      color-mix(in oklab, var(--bg) 10%, transparent) 100%
-    );
-}
-.hero-pattern:has(.hero-bg-ru) .hero-pattern-fade {
-  background:
-    radial-gradient(
-      ellipse 75% 55% at 50% 50%,
-      color-mix(in oklab, var(--bg) 86%, transparent) 0%,
-      color-mix(in oklab, var(--bg) 55%, transparent) 50%,
-      color-mix(in oklab, var(--bg) 30%, transparent) 100%
-    );
-}
-.hero-pattern:has(.hero-bg-en) .hero-pattern-fade {
-  background:
-    radial-gradient(
-      ellipse 75% 55% at 50% 50%,
-      color-mix(in oklab, var(--bg) 88%, transparent) 0%,
-      color-mix(in oklab, var(--bg) 60%, transparent) 50%,
-      color-mix(in oklab, var(--bg) 32%, transparent) 100%
+      ellipse 85% 72% at 50% 50%,
+      color-mix(in oklab, var(--bg) 92%, transparent) 0%,
+      color-mix(in oklab, var(--bg) 70%, transparent) 45%,
+      color-mix(in oklab, var(--bg) 45%, transparent) 100%
     );
 }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
@@ -294,10 +270,8 @@ body, html { margin: 0; padding: 0; }
   .hero-names-stack { align-items: center; text-align:center;}
   .date-block { justify-content: center; }
   .topbar { padding: 14px 20px;}
-  .timeline, .location, .dress, .gallery, .rsvp, .contacts, .countdown { padding: 48px 24px;}
+  .location, .dress, .gallery, .rsvp, .contacts, .countdown { padding: 48px 24px;}
   .loc-grid { grid-template-columns: 1fr; gap: 24px;}
-  .tl-item { grid-template-columns: 1fr; gap: 8px;}
-  .tl-year { font-size: 28px;}
   .gal-grid { grid-template-columns: repeat(2, 1fr); }
   .contact-row { grid-template-columns: 1fr; gap: 4px;}
   .cd-grid { grid-template-columns: repeat(2, 1fr); gap: 24px;}
@@ -327,14 +301,14 @@ body, html { margin: 0; padding: 0; }
 }
 
 /* common section spacing */
-.timeline, .location, .dress, .gallery, .rsvp, .contacts, .countdown {
+.location, .dress, .gallery, .rsvp, .contacts, .countdown {
   padding: 64px 36px;
   max-width: 1100px;
   margin: 0 auto;
   position: relative;
 }
 @media (max-width: 768px) {
-  .timeline, .location, .dress, .gallery, .rsvp, .contacts, .countdown {
+  .location, .dress, .gallery, .rsvp, .contacts, .countdown {
     padding: 48px 24px;
   }
 }
@@ -388,51 +362,6 @@ body, html { margin: 0; padding: 0; }
   .cd-grid { grid-template-columns: repeat(2, 1fr); gap: 24px;}
 }
 
-/* ===== Timeline ===== */
-.tl-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 0;
-  position: relative;
-}
-.tl-item {
-  display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: 32px;
-  align-items: start;
-  padding: 28px 0;
-  border-top: 1px solid var(--rule);
-}
-.tl-item:last-child { border-bottom: 1px solid var(--rule); }
-.tl-year {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 36px;
-  line-height: 1;
-  color: var(--accent);
-  letter-spacing: -0.01em;
-}
-.tl-title {
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 400;
-  font-size: 28px;
-  line-height: 1.1;
-  margin: 0 0 6px;
-}
-.tl-text {
-  color: var(--ink-soft);
-  margin: 0;
-  font-size: 15px;
-  line-height: 1.55;
-  max-width: 56ch;
-  text-wrap: pretty;
-}
-@media (max-width: 600px) {
-  .tl-item { grid-template-columns: 1fr; gap: 8px;}
-  .tl-year { font-size: 28px;}
-}
-
 /* ===== Location ===== */
 .loc-grid {
   display: grid;
@@ -475,8 +404,9 @@ body, html { margin: 0; padding: 0; }
   border-radius: 4px;
   overflow: hidden;
   background: #ECE3D2;
+  aspect-ratio: 3 / 2;
 }
-.loc-map svg { display: block; width: 100%; height: auto;}
+.loc-map iframe { display: block; width: 100%; height: 100%; border: 0; }
 @media (max-width: 768px) {
   .loc-grid { grid-template-columns: 1fr; gap: 24px;}
 }
@@ -487,33 +417,7 @@ body, html { margin: 0; padding: 0; }
   font-size: 17px;
   line-height: 1.5;
   max-width: 60ch;
-  margin: 0 0 36px;
   text-wrap: pretty;
-}
-.swatches {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  max-width: 540px;
-}
-.swatch {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.sw-color {
-  width: 100%;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06), 0 4px 16px rgba(26,22,18,0.08);
-}
-.sw-name {
-  font-size: 13px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-  text-align: center;
-  font-weight: 500;
 }
 
 /* ===== Gallery ===== */
@@ -527,23 +431,13 @@ body, html { margin: 0; padding: 0; }
   overflow: hidden;
   background: var(--bg-soft);
   border-radius: 2px;
+  aspect-ratio: 4 / 5;
 }
-.gal-0 { background: linear-gradient(135deg, color-mix(in oklab, var(--accent) 18%, var(--bg-soft)), var(--bg-soft));}
-.gal-1 { background: linear-gradient(135deg, var(--bg-soft), color-mix(in oklab, var(--accent) 8%, var(--bg-soft)));}
-.gal-2 { background: linear-gradient(135deg, color-mix(in oklab, var(--ink) 8%, var(--bg-soft)), var(--bg-soft));}
-.gal-ph {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px dashed color-mix(in oklab, var(--ink) 18%, transparent);
-}
-.gal-num {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 48px;
-  font-style: italic;
-  color: color-mix(in oklab, var(--ink) 35%, transparent);
+.gal-cell img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 @media (max-width: 600px) {
   .gal-grid { grid-template-columns: repeat(2, 1fr); }
