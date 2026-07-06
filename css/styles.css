@@ -541,16 +541,6 @@ body, html { margin: 0; padding: 0; }
   background: var(--accent);
   border-color: var(--accent);
 }
-.checkbox {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 14px;
-  color: var(--ink-soft);
-  cursor: pointer;
-  user-select: none;
-}
-.checkbox input { accent-color: var(--accent); width: 16px; height: 16px;}
 .submit-btn {
   appearance: none;
   background: var(--ink);

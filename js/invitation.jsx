@@ -26,7 +26,6 @@ const I18N = {
     rsvpName: "Сіздің атыңыз",
     rsvpAttend: "Қатысамын",
     rsvpDecline: "Келе алмаймын",
-    rsvpPlus: "Жұбайыммен бірге келемін",
     rsvpMessage: "Пікір (қаласаңыз)",
     rsvpSubmit: "Жіберу",
     rsvpThanks: "Рақмет! Жауабыңыз қабылданды.",
@@ -62,7 +61,6 @@ const I18N = {
     rsvpName: "Ваше имя",
     rsvpAttend: "Буду",
     rsvpDecline: "Не смогу",
-    rsvpPlus: "Приду с супругом/супругой",
     rsvpMessage: "Комментарий (по желанию)",
     rsvpSubmit: "Отправить",
     rsvpThanks: "Спасибо! Ваш ответ принят.",
@@ -98,7 +96,6 @@ const I18N = {
     rsvpName: "Your name",
     rsvpAttend: "I'll be there",
     rsvpDecline: "Can't make it",
-    rsvpPlus: "Bringing my spouse",
     rsvpMessage: "Comment (optional)",
     rsvpSubmit: "Send",
     rsvpThanks: "Thank you! Your reply is in.",
@@ -118,7 +115,6 @@ const RSVP_FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLScO1VUDdq0OYD
 const RSVP_FORM_ENTRIES = {
   name: "entry.700012392",
   attend: "entry.284942103",
-  plusOne: "entry.1510766542",
   comment: "entry.1597670396",
 };
 
@@ -267,7 +263,6 @@ function RSVP({ t, accent }) {
   const [submitted, setSubmitted] = React.useState(false);
   const [attend, setAttend] = React.useState(null);
   const nameRef = React.useRef(null);
-  const plusRef = React.useRef(null);
   const commentRef = React.useRef(null);
 
   function handleSubmit(e) {
@@ -276,7 +271,6 @@ function RSVP({ t, accent }) {
     const body = new URLSearchParams();
     body.append(RSVP_FORM_ENTRIES.name, nameRef.current.value.trim());
     body.append(RSVP_FORM_ENTRIES.attend, attend === "yes" ? "Буду" : "Не буду");
-    if (plusRef.current.checked) body.append(RSVP_FORM_ENTRIES.plusOne, "Приду с гостем");
     const comment = commentRef.current.value.trim();
     if (comment) body.append(RSVP_FORM_ENTRIES.comment, comment);
 
@@ -310,10 +304,6 @@ function RSVP({ t, accent }) {
             <span className="dot"/>{t.rsvpDecline}
           </button>
         </div>
-        <label className="checkbox">
-          <input ref={plusRef} type="checkbox"/>
-          <span>{t.rsvpPlus}</span>
-        </label>
         <label className="field">
           <span className="field-label">{t.rsvpMessage}</span>
           <textarea ref={commentRef} rows="3" placeholder="—"/>
