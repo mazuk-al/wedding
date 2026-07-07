@@ -591,6 +591,7 @@ body, html { margin: 0; padding: 0; }
   font-weight: 600;
 }
 .ct-phone {
+  justify-self: end;
   color: var(--accent);
   text-decoration: none;
   font-size: 16px;
@@ -602,6 +603,7 @@ body, html { margin: 0; padding: 0; }
 .ct-phone:hover { border-color: currentColor;}
 @media (max-width: 600px) {
   .contact-row { grid-template-columns: 1fr; gap: 4px;}
+  .ct-phone { justify-self: start; }
 }
 
 /* ===== Footer ===== */
