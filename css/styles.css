@@ -576,7 +576,7 @@ body, html { margin: 0; padding: 0; }
 }
 .contact-row {
   display: grid;
-  grid-template-columns: 200px 1fr auto;
+  grid-template-columns: 200px 1fr;
   gap: 32px;
   align-items: baseline;
   padding: 22px 0;
@@ -589,10 +589,6 @@ body, html { margin: 0; padding: 0; }
   text-transform: uppercase;
   color: var(--ink-mute);
   font-weight: 600;
-}
-.ct-name {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 24px;
 }
 .ct-phone {
   color: var(--accent);

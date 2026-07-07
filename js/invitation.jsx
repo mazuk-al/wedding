@@ -16,22 +16,22 @@ const I18N = {
     units: { days: "күн", hours: "сағат", minutes: "минут", seconds: "секунд" },
     locationTitle: "Орналасуы",
     locationDesc: "Тойымыз Qorzhyn Grand мерекелік залында өтеді. Қалаға кіреберіс, парковка тегін.",
-    address: "Құрамыс ш/а, Балбырауын көшесі, 2А, Алматы",
+    address: "Балбырауын көшесі, 2А, Алматы",
     mapLink: "Картадан көру",
     dressTitle: "Дресс-код",
-    dressDesc: "Қатаң дресс-код жоқ. Егер сізде қазақ немесе орыс ұлттық киімі болса — оны киіп келгеніңізге өте қуанамыз.",
+    dressDesc: "Егер сізде қазақ немесе орыс ұлттық киімі болса — оны киіп келгеніңізге өте қуанамыз.",
     galleryTitle: "Біз",
-    rsvpTitle: "Қатысуыңызды растаңыз",
+    rsvpTitle: "Қатысуыңызды растауыңызды сұраймыз",
     rsvpDesc: "Кештің ұйымдастырылуы үшін 26 тамызға дейін жауап бересіз бе?",
     rsvpName: "Сіздің атыңыз",
-    rsvpAttend: "Қатысамын",
-    rsvpDecline: "Келе алмаймын",
+    rsvpAttend: "Қатысамын/қатысамыз",
+    rsvpDecline: "Келе алмаймын/алмаймыз",
     rsvpMessage: "Пікір (қаласаңыз)",
     rsvpSubmit: "Жіберу",
     rsvpThanks: "Рақмет! Жауабыңыз қабылданды.",
     contactsTitle: "Сұрақтарыңыз болса",
     contacts: [
-      { role: "Жүргізуші", name: "Назарбек", phone: "+7 705 116 85 59" }
+      { role: "Ұйымдастырушы", whatsapp: "https://wa.me/77012110363", phone: "+7 701 211 03 63" }
     ],
     footer: "Сіздерді көргенімізге қуаныштымыз"
   },
@@ -51,22 +51,22 @@ const I18N = {
     units: { days: "дней", hours: "часов", minutes: "минут", seconds: "секунд" },
     locationTitle: "Где",
     locationDesc: "Свадьба пройдёт в банкетном зале Qorzhyn Grand. Удобный въезд, бесплатная парковка.",
-    address: "мкр. Курамыс, ул. Балбырауын, 2А, Алматы",
+    address: "ул. Балбырауын, 2А, Алматы",
     mapLink: "Открыть на карте",
     dressTitle: "Дресс-код",
-    dressDesc: "Строгого дресс-кода нет. Если у вас есть казахский или русский национальный наряд — будем очень рады видеть вас в нём.",
+    dressDesc: "Если у вас есть казахский или русский национальный наряд — будем очень рады видеть вас в нём.",
     galleryTitle: "Мы",
-    rsvpTitle: "Подтвердите присутствие",
+    rsvpTitle: "Просим подтвердить участие",
     rsvpDesc: "Чтобы мы всё правильно организовали, ответьте, пожалуйста, до 26 августа.",
     rsvpName: "Ваше имя",
-    rsvpAttend: "Буду",
-    rsvpDecline: "Не смогу",
+    rsvpAttend: "Буду/будем",
+    rsvpDecline: "Не смогу/не сможем",
     rsvpMessage: "Комментарий (по желанию)",
     rsvpSubmit: "Отправить",
     rsvpThanks: "Спасибо! Ваш ответ принят.",
     contactsTitle: "Если есть вопросы",
     contacts: [
-      { role: "Ведущий", name: "Назарбек", phone: "+7 705 116 85 59" }
+      { role: "Организатор", whatsapp: "https://wa.me/77012110363", phone: "+7 701 211 03 63" }
     ],
     footer: "Будем рады вас видеть"
   },
@@ -86,22 +86,22 @@ const I18N = {
     units: { days: "days", hours: "hours", minutes: "minutes", seconds: "seconds" },
     locationTitle: "Where",
     locationDesc: "The wedding will be at Qorzhyn Grand. Easy access, free parking.",
-    address: "2A Balbyrauyn St, Kuramys, Almaty",
+    address: "2A Balbyrauyn St, Almaty",
     mapLink: "Open in maps",
     dressTitle: "Dress code",
-    dressDesc: "There's no strict dress code. If you have a Kazakh or Russian national costume, we'd love to see you wearing it.",
+    dressDesc: "If you have a Kazakh or Russian national costume, we'd love to see you wearing it.",
     galleryTitle: "Us",
-    rsvpTitle: "Please RSVP",
+    rsvpTitle: "Please Confirm Your Attendance",
     rsvpDesc: "So we can plan well, please reply by August 26th.",
     rsvpName: "Your name",
-    rsvpAttend: "I'll be there",
-    rsvpDecline: "Can't make it",
+    rsvpAttend: "I'll be there / We'll be there",
+    rsvpDecline: "Can't make it / We can't make it",
     rsvpMessage: "Comment (optional)",
     rsvpSubmit: "Send",
     rsvpThanks: "Thank you! Your reply is in.",
     contactsTitle: "Questions?",
     contacts: [
-      { role: "Host", name: "Narazbek", phone: "+7 705 116 85 59" }
+      { role: "Organizer", whatsapp: "https://wa.me/77012110363", phone: "+7 701 211 03 63" }
     ],
     footer: "Can't wait to see you"
   }
@@ -322,8 +322,7 @@ function Contacts({ t, accent }) {
         {t.contacts.map((c,i)=>(
           <li key={i} className="contact-row">
             <div className="ct-role">{c.role}</div>
-            <div className="ct-name">{c.name}</div>
-            <a className="ct-phone" href={"tel:"+c.phone.replace(/\s/g,"")}>{c.phone}</a>
+            <a className="ct-phone" href={c.whatsapp} target="_blank" rel="noopener noreferrer">{c.phone}</a>
           </li>
         ))}
       </ul>
@@ -374,8 +373,8 @@ function Invitation({ variant = "A", density = 1, accentOverrides = {}, initialL
             </div>
             <div className="hero-meta">
               <div className="meta-row"><span className="meta-k">{t.saveTheDate}</span></div>
-              <div className="meta-row"><span className="meta-v">{t.fullDate}</span></div>
-              <div className="meta-row"><span className="meta-v">{t.time} · {t.venueLine1}, {t.venueLine2}</span></div>
+              <div className="meta-row"><span className="meta-v">{t.fullDate}, {t.time}</span></div>
+              <div className="meta-row"><span className="meta-v">{t.venueLine1}, {t.venueLine2}</span></div>
             </div>
           </div>
         )}
