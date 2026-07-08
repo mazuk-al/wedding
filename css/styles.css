@@ -50,8 +50,13 @@ body, html { margin: 0; padding: 0; }
   -webkit-backdrop-filter: saturate(1.1) blur(8px);
   border-bottom: 1px solid color-mix(in oklab, var(--rule) 60%, transparent);
 }
-.monogram {
+.logo {
   display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.monogram {
   height: 40px;
   width: auto;
 }
@@ -606,8 +611,7 @@ body, html { margin: 0; padding: 0; }
   background: color-mix(in oklab, var(--bg-soft) 60%, var(--bg));
 }
 .foot-mono {
-  display: block;
-  height: 64px;
+  height: clamp(48px, 12vw, 72px);
   width: auto;
   margin: 0 auto 14px;
 }
