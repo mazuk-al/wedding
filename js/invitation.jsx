@@ -353,7 +353,7 @@ function Invitation({ variant = "A", density = 1, accentOverrides = {}, initialL
   return (
     <div className={"invitation v-" + variant + " lang-" + lang} style={rootStyle}>
       <header className="topbar">
-        <img className="logo monogram" src="assets/alexadina_logo.png" alt="Александр & Адина"/>
+        <img className="logo monogram" src="assets/alexadina_logo.png?v=2" alt="Александр & Адина"/>
         <LangSwitcher lang={lang} setLang={setLang}/>
       </header>
 
@@ -416,7 +416,7 @@ function Invitation({ variant = "A", density = 1, accentOverrides = {}, initialL
       <Contacts t={t} accent={accent}/>
 
       <footer className="footer">
-        <img className="logo foot-mono" src="assets/alexadina_logo.png" alt="Александр & Адина"/>
+        <img className="logo foot-mono" src="assets/alexadina_logo.png?v=2" alt="Александр & Адина"/>
         <div className="foot-text">{t.footer}</div>
         <div className="foot-date">26.09.2026</div>
       </footer>
