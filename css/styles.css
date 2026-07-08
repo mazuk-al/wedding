@@ -51,18 +51,9 @@ body, html { margin: 0; padding: 0; }
   border-bottom: 1px solid color-mix(in oklab, var(--rule) 60%, transparent);
 }
 .monogram {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 24px;
-  letter-spacing: 0.18em;
-  font-weight: 500;
-  color: var(--ink);
-  display: flex; align-items: baseline; gap: 4px;
-}
-.monogram span {
-  color: var(--accent);
-  font-style: italic;
-  font-weight: 400;
-  transform: translateY(-1px);
+  display: block;
+  height: 40px;
+  width: auto;
 }
 .lang-switcher {
   display: inline-flex;
@@ -615,12 +606,11 @@ body, html { margin: 0; padding: 0; }
   background: color-mix(in oklab, var(--bg-soft) 60%, var(--bg));
 }
 .foot-mono {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 36px;
-  letter-spacing: 0.18em;
-  margin-bottom: 14px;
+  display: block;
+  height: 64px;
+  width: auto;
+  margin: 0 auto 14px;
 }
-.foot-mono span { color: var(--accent); font-style: italic;}
 .foot-text {
   font-family: "Cormorant Garamond", serif;
   font-style: italic;
