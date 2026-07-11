@@ -389,7 +389,6 @@ body, html { margin: 0; padding: 0; }
   line-height: 1;
   margin: 0 0 16px;
 }
-.loc-desc { color: var(--ink-soft); line-height: 1.55; text-wrap: pretty; margin: 0 0 12px; }
 .loc-address {
   font-size: 14px;
   color: var(--ink-mute);
@@ -563,6 +562,13 @@ body, html { margin: 0; padding: 0; }
 }
 
 /* ===== Contacts ===== */
+.contacts-note {
+  color: var(--ink-soft);
+  line-height: 1.55;
+  text-wrap: pretty;
+  margin: 0 0 20px;
+  max-width: 60ch;
+}
 .contacts-list {
   list-style: none;
   margin: 0;
@@ -588,6 +594,9 @@ body, html { margin: 0; padding: 0; }
 }
 .ct-phone {
   justify-self: end;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   color: var(--accent);
   text-decoration: none;
   font-size: 16px;
@@ -597,6 +606,12 @@ body, html { margin: 0; padding: 0; }
   transition: border-color .2s ease;
 }
 .ct-phone:hover { border-color: currentColor;}
+.ct-phone-icon {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  color: currentColor;
+}
 @media (max-width: 600px) {
   .contact-row { grid-template-columns: 1fr; gap: 4px;}
   .ct-phone { justify-self: start; }

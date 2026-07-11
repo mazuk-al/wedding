@@ -4,36 +4,36 @@ const I18N = {
     code: "kk",
     label: "Қазақша",
     short: "KZ",
-    intro: "Сізді біздің үйлену тойымызға шақырамыз",
+    intro: "Сіздерді біздің үйлену тойымызға шақырамыз",
     names: ["Александр", "Адина"],
     and: "&",
-    saveTheDate: "Күнді есте сақтаңыз",
+    saveTheDate: "Бұл күнді есте сақтаңыз",
     fullDate: "2026 жылы, 26 қыркүйек, сенбі",
     time: "17:00",
-    venueLine1: "Qorzhyn Grand",
+    venueLine1: "«Qorzhyn Grand» салтанат залы",
     venueLine2: "Алматы, Қазақстан",
-    countdownTitle: "Тойға дейін қалды",
+    countdownTitle: "Тойға дейін қалған уақыт",
     units: { days: "күн", hours: "сағат", minutes: "минут", seconds: "секунд" },
-    locationTitle: "Орналасуы",
-    locationDesc: "Тойымыз Qorzhyn Grand мерекелік залында өтеді. Қалаға кіреберіс, парковка тегін.",
+    locationTitle: "Тойдың мекенжайы",
     address: "Балбырауын көшесі, 2А, Алматы",
     mapLink: "Картадан көру",
     dressTitle: "Дресс-код",
-    dressDesc: "Егер сізде қазақ немесе орыс ұлттық киімі болса — оны киіп келгеніңізге өте қуанамыз.",
+    dressDesc: "Егер сізде қазақ немесе орыс ұлттық киімі болса — оны киіп келгеніңізге өте қуанамыз",
     galleryTitle: "Біз",
     rsvpTitle: "Қатысуыңызды растауыңызды сұраймыз",
-    rsvpDesc: "Кештің ұйымдастырылуы үшін 26 тамызға дейін жауап бересіз бе?",
-    rsvpName: "Сіздің атыңыз",
+    rsvpDesc: "Барлығын дұрыс ұйымдастыру үшін 26 тамызға дейін жауап беріңіз",
+    rsvpName: "Сіздің есімдеріңіз",
     rsvpAttend: "Қатысамын/қатысамыз",
     rsvpDecline: "Келе алмаймын/алмаймыз",
-    rsvpMessage: "Пікір (қаласаңыз)",
+    rsvpMessage: "Пікірлеріңіз",
     rsvpSubmit: "Жіберу",
     rsvpThanks: "Рақмет! Жауабыңыз қабылданды.",
     contactsTitle: "Сұрақтарыңыз болса",
+    contactsNote: "Шығармашылық құттықтауларыңызға қуанышты боламыз! Өнер нөміріңіз туралы 01.09.2026 дейін ұйымдастырушыларға WhatsApp арқылы хабарлауыңызды сұраймыз.",
     contacts: [
-      { role: "Ұйымдастырушы", whatsapp: "https://wa.me/77012110363", phone: "+7 701 211 03 63" }
+      { role: "Ұйымдастырушылар", whatsapp: "https://wa.me/77012110363", phone: "+7 701 211 03 63" }
     ],
-    footer: "Сіздерді көргенімізге қуаныштымыз"
+    footer: "Сізді көруді асыға күтеміз"
   },
   ru: {
     code: "ru",
@@ -50,7 +50,6 @@ const I18N = {
     countdownTitle: "До свадьбы осталось",
     units: { days: "дней", hours: "часов", minutes: "минут", seconds: "секунд" },
     locationTitle: "Где",
-    locationDesc: "Свадьба пройдёт в банкетном зале Qorzhyn Grand. Удобный въезд, бесплатная парковка.",
     address: "ул. Балбырауын, 2А, Алматы",
     mapLink: "Открыть на карте",
     dressTitle: "Дресс-код",
@@ -65,8 +64,9 @@ const I18N = {
     rsvpSubmit: "Отправить",
     rsvpThanks: "Спасибо! Ваш ответ принят.",
     contactsTitle: "Если есть вопросы",
+    contactsNote: "Будем рады вашим творческим поздравлениям! Пожалуйста, до 01.09.2026 сообщите организаторам в WhatsApp о своем номере.",
     contacts: [
-      { role: "Организатор", whatsapp: "https://wa.me/77012110363", phone: "+7 701 211 03 63" }
+      { role: "Организаторы", whatsapp: "https://wa.me/77012110363", phone: "+7 701 211 03 63" }
     ],
     footer: "Будем рады вас видеть"
   },
@@ -85,7 +85,6 @@ const I18N = {
     countdownTitle: "Until the wedding",
     units: { days: "days", hours: "hours", minutes: "minutes", seconds: "seconds" },
     locationTitle: "Where",
-    locationDesc: "The wedding will be at Qorzhyn Grand. Easy access, free parking.",
     address: "2A Balbyrauyn St, Almaty",
     mapLink: "Open in maps",
     dressTitle: "Dress code",
@@ -100,8 +99,9 @@ const I18N = {
     rsvpSubmit: "Send",
     rsvpThanks: "Thank you! Your reply is in.",
     contactsTitle: "Questions?",
+    contactsNote: "We'd be delighted with a creative performance from you! Please let the organizers know about it via WhatsApp by 01.09.2026.",
     contacts: [
-      { role: "Organizer", whatsapp: "https://wa.me/77012110363", phone: "+7 701 211 03 63" }
+      { role: "Organizers", whatsapp: "https://wa.me/77012110363", phone: "+7 701 211 03 63" }
     ],
     footer: "Can't wait to see you"
   }
@@ -208,7 +208,6 @@ function Location({ t, accent }) {
       <div className="loc-grid">
         <div className="loc-text">
           <h3 className="loc-venue">{t.venueLine1}</h3>
-          <p className="loc-desc">{t.locationDesc}</p>
           <p className="loc-address">{t.address}</p>
           <a className="link-arrow" href="https://yandex.kz/maps/ru/-/CTepnX6X" target="_blank" rel="noopener noreferrer">{t.mapLink} <span>→</span></a>
         </div>
@@ -318,11 +317,18 @@ function Contacts({ t, accent }) {
   return (
     <section className="contacts" style={{"--accent": accent}}>
       <SectionTitle small="05">{t.contactsTitle}</SectionTitle>
+      <p className="contacts-note">{t.contactsNote}</p>
       <ul className="contacts-list">
         {t.contacts.map((c,i)=>(
           <li key={i} className="contact-row">
             <div className="ct-role">{c.role}</div>
-            <a className="ct-phone" href={c.whatsapp} target="_blank" rel="noopener noreferrer">{c.phone}</a>
+            <a className="ct-phone" href={c.whatsapp} target="_blank" rel="noopener noreferrer">
+              <svg className="ct-phone-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                <path d="M12.001 2C6.478 2 2 6.478 2 12c0 1.87.505 3.639 1.462 5.174L2.05 22l4.929-1.393A9.958 9.958 0 0 0 12.001 22C17.523 22 22 17.522 22 12S17.523 2 12.001 2zm0 18.153a8.13 8.13 0 0 1-4.153-1.14l-.298-.177-3.03.856.86-2.958-.194-.305A8.126 8.126 0 0 1 3.847 12c0-4.499 3.656-8.153 8.154-8.153 4.497 0 8.152 3.654 8.152 8.153 0 4.498-3.655 8.153-8.152 8.153z"/>
+              </svg>
+              {c.phone}
+            </a>
           </li>
         ))}
       </ul>
