@@ -140,6 +140,29 @@ function useCountdown(target) {
   return { days, hours, minutes, seconds };
 }
 
+// Reveals an element with a fade/rise once it scrolls into view (one-shot).
+function useReveal(options) {
+  const ref = React.useRef(null);
+  const [visible, setVisible] = React.useState(false);
+  React.useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setVisible(true);
+      return;
+    }
+    const io = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setVisible(true);
+        io.disconnect();
+      }
+    }, { threshold: 0.15, rootMargin: "0px 0px -8% 0px", ...options });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+  return [ref, visible];
+}
+
 // ===== Sub-components =====
 function LangSwitcher({ lang, setLang }) {
   return (
@@ -181,8 +204,9 @@ function HeroPattern({ lang, density }) {
 
 function Countdown({ t, accent }) {
   const c = useCountdown(WEDDING_DATE);
+  const [ref, visible] = useReveal();
   return (
-    <div className="countdown">
+    <div ref={ref} className={"countdown reveal" + (visible ? " is-visible" : "")}>
       <div className="cd-title">{t.countdownTitle}</div>
       <div className="cd-grid" style={{"--accent": accent}}>
         {[
@@ -202,8 +226,9 @@ function Countdown({ t, accent }) {
 }
 
 function Location({ t, accent }) {
+  const [ref, visible] = useReveal();
   return (
-    <section className="location" style={{"--accent": accent}}>
+    <section ref={ref} className={"location reveal" + (visible ? " is-visible" : "")} style={{"--accent": accent}}>
       <SectionTitle small="01">{t.locationTitle}</SectionTitle>
       <div className="loc-grid">
         <div className="loc-text">
@@ -226,11 +251,25 @@ function Location({ t, accent }) {
 }
 
 function Dress({ t, accent }) {
+  const [ref, visible] = useReveal();
   return (
-    <section className="dress" style={{"--accent": accent}}>
+    <section ref={ref} className={"dress reveal" + (visible ? " is-visible" : "")} style={{"--accent": accent}}>
       <SectionTitle small="02">{t.dressTitle}</SectionTitle>
       <p className="dress-desc">{t.dressDesc}</p>
     </section>
+  );
+}
+
+function GalleryCell({ src, alt, index }) {
+  const [ref, visible] = useReveal({ threshold: 0.2 });
+  return (
+    <div
+      ref={ref}
+      className={"gal-cell reveal" + (visible ? " is-visible" : "")}
+      style={{ transitionDelay: Math.min(index, 5) * 70 + "ms" }}
+    >
+      <img src={src} alt={alt} loading="lazy"/>
+    </div>
   );
 }
 
@@ -249,9 +288,7 @@ function Gallery({ t }) {
       <SectionTitle small="03">{t.galleryTitle}</SectionTitle>
       <div className="gal-grid">
         {photos.map((src, i) => (
-          <div key={i} className="gal-cell">
-            <img src={src} alt={names} loading="lazy"/>
-          </div>
+          <GalleryCell key={i} src={src} alt={names} index={i}/>
         ))}
       </div>
     </section>
@@ -263,6 +300,7 @@ function RSVP({ t, accent }) {
   const [attend, setAttend] = React.useState(null);
   const nameRef = React.useRef(null);
   const commentRef = React.useRef(null);
+  const [ref, visible] = useReveal();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -279,7 +317,7 @@ function RSVP({ t, accent }) {
 
   if (submitted) {
     return (
-      <section className="rsvp rsvp-done" style={{"--accent": accent}}>
+      <section ref={ref} className={"rsvp rsvp-done reveal" + (visible ? " is-visible" : "")} style={{"--accent": accent}}>
         <div className="rsvp-thanks">
           <SectionTitle small="04">{t.rsvpThanks}</SectionTitle>
         </div>
@@ -287,7 +325,7 @@ function RSVP({ t, accent }) {
     );
   }
   return (
-    <section className="rsvp" style={{"--accent": accent}}>
+    <section ref={ref} className={"rsvp reveal" + (visible ? " is-visible" : "")} style={{"--accent": accent}}>
       <SectionTitle small="04">{t.rsvpTitle}</SectionTitle>
       <p className="rsvp-desc">{t.rsvpDesc}</p>
       <form className="rsvp-form" onSubmit={handleSubmit}>
@@ -314,8 +352,9 @@ function RSVP({ t, accent }) {
 }
 
 function Contacts({ t, accent }) {
+  const [ref, visible] = useReveal();
   return (
-    <section className="contacts" style={{"--accent": accent}}>
+    <section ref={ref} className={"contacts reveal" + (visible ? " is-visible" : "")} style={{"--accent": accent}}>
       <SectionTitle small="05">{t.contactsTitle}</SectionTitle>
       <p className="contacts-note">{t.contactsNote}</p>
       <ul className="contacts-list">
