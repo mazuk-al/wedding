@@ -276,12 +276,12 @@ function GalleryCell({ src, alt, index }) {
 function Gallery({ t }) {
   const names = t.names.join(" & ");
   const photos = [
-    "assets/photos/IMG_6651.JPG",
-    "assets/photos/photo_2026-07-04%2019.11.15.jpeg",
-    "assets/photos/2026-07-04%2018.20.44.jpg",
-    "assets/photos/2026-07-04%2018.20.53.jpg",
-    "assets/photos/photo_2026-07-04%2019.11.48.jpeg",
-    "assets/photos/photo_2026-07-04%2019.12.26.jpeg",
+    "assets/photos/gallery-1.jpg",
+    "assets/photos/gallery-2.jpg",
+    "assets/photos/gallery-3.jpg",
+    "assets/photos/gallery-4.jpg",
+    "assets/photos/gallery-5.jpg",
+    "assets/photos/gallery-6.jpg",
   ];
   return (
     <section className="gallery">
