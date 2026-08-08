@@ -100,6 +100,30 @@
     text-transform: uppercase;
   }
 
+  .cta-btn {
+    margin-top: clamp(28px, 5vh, 64px);
+    display: inline-block;
+    padding: 13px 30px;
+    border: 1px solid var(--gold);
+    border-radius: 999px;
+    color: var(--gold);
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(12px, 0.9vw + 8px, 15px);
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-indent: 0.3em;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: transparent;
+    transition: background .25s ease, color .25s ease;
+  }
+  .cta-btn:hover,
+  .cta-btn:focus-visible {
+    background: var(--gold);
+    color: var(--bg-glow);
+  }
+  .cta-btn:active { transform: scale(0.97); }
+
   /* ===== Bottom: mountains, lake and the date ===== */
   .bottom {
     position: relative;
@@ -143,10 +167,11 @@
   }
   .monogram        { animation: rise 0.9s ease-out both; }
   .names, .tagline, .divider-mid { animation: rise 0.9s ease-out 0.25s both; }
+  .cta-btn         { animation: rise 0.9s ease-out 0.4s both; }
   .card-footer     { animation: rise 0.9s ease-out 0.5s both; }
 
   @media (prefers-reduced-motion: reduce) {
-    .monogram, .names, .tagline, .divider-mid, .card-footer { animation: none; }
+    .monogram, .names, .tagline, .divider-mid, .cta-btn, .card-footer { animation: none; }
   }
 
   /* Short landscape viewports: tighten the column */
@@ -225,8 +250,9 @@
       <img class="divider divider-names" src="../assets/divider-diamond.svg" alt="" aria-hidden="true" width="400" height="48"/>
       <span class="name">Адина</span>
     </h1>
-    <p class="tagline">Будем рады вас видеть</p>
+    <p class="tagline">Үйлену тойына шақыру</p>
     <img class="divider divider-mid" src="../assets/divider-diamond.svg" alt="" aria-hidden="true" width="400" height="48"/>
+    <a class="cta-btn" href="../">Толығырақ</a>
   </section>
 
   <div class="bottom">
