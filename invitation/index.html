@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<title>Александр &amp; Адина — 26.09.2026</title>
+<meta name="description" content="Приглашение на свадьбу Александра и Адины — 26 сентября 2026, Алматы."/>
+<meta name="theme-color" content="#F6EBD9"/>
+<link rel="icon" href="../assets/favicon.ico?v=2" sizes="any"/>
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png?v=2"/>
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png?v=2"/>
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png?v=2"/>
+<link rel="preload" as="image" href="../assets/monogram-aa-tulip.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --bg: #F6EBD9;
+    --bg-glow: #FBF3E4;
+    --bg-deep: #EEDDC4;
+    --gold: #A0793E;      /* names, tagline, date */
+    --bronze: #A9865B;    /* matches divider SVG strokes */
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body { height: 100%; }
+  body {
+    background: var(--bg);
+    font-family: "Cormorant Garamond", "Times New Roman", serif;
+    color: var(--gold);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .card {
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: radial-gradient(130% 95% at 50% 30%, var(--bg-glow) 0%, var(--bg) 55%, var(--bg-deep) 100%);
+  }
+
+  /* ===== Content column ===== */
+  .content {
+    position: relative;
+    z-index: 2;
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: min(92vw, 720px);
+    padding-top: clamp(44px, 8vh, 110px);
+    padding-bottom: clamp(20px, 3vh, 44px);
+  }
+
+  /* Logo widths per breakpoint spec:
+     ≥1200px → 240–280, 768–1199 → 180–220, 375–767 → 140–160, ≤320 → never below 120 */
+  .monogram {
+    width: clamp(120px, 16vw + 80px, 280px);
+    height: auto;
+    filter: drop-shadow(0 12px 26px rgba(96, 62, 22, 0.20));
+  }
+
+  .names {
+    margin-top: clamp(28px, 5.5vh, 76px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(8px, 1.6vh, 18px);
+    font-weight: 500;
+  }
+  .name {
+    font-size: clamp(36px, 3.2vw + 24px, 60px);
+    line-height: 1.08;
+    letter-spacing: 0.05em;
+    color: var(--gold);
+  }
+
+  .divider { display: block; height: auto; }
+  .divider-names { width: clamp(200px, 30vw, 330px); }
+  .divider-mid {
+    width: clamp(120px, 15vw, 175px);
+    margin-top: clamp(24px, 4.5vh, 56px);
+  }
+
+  .tagline {
+    margin-top: clamp(26px, 4.5vh, 60px);
+    font-size: clamp(12px, 1vw + 8px, 17px);
+    font-weight: 600;
+    letter-spacing: 0.42em;
+    text-indent: 0.42em;
+    text-transform: uppercase;
+  }
+
+  /* ===== Bottom: mountains, lake and the date ===== */
+  .bottom {
+    position: relative;
+    z-index: 1;
+    flex: none;
+    width: 100%;
+    height: clamp(170px, 24vh, 310px);
+  }
+  .mountains {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: url("../assets/background-mountains-lake.png") center bottom / cover no-repeat;
+    mix-blend-mode: multiply;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 45%);
+            mask-image: linear-gradient(to bottom, transparent 0%, #000 45%);
+  }
+  .card-footer {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    bottom: max(clamp(16px, 3.5vh, 40px), env(safe-area-inset-bottom));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(10px, 1.6vh, 18px);
+  }
+  .date {
+    font-size: clamp(15px, 1vw + 10px, 22px);
+    font-weight: 600;
+    letter-spacing: 0.38em;
+    text-indent: 0.38em;
+  }
+  .divider-foot { width: clamp(92px, 12vw, 140px); }
+
+  /* ===== Entrance ===== */
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: none; }
+  }
+  .monogram        { animation: rise 0.9s ease-out both; }
+  .names, .tagline, .divider-mid { animation: rise 0.9s ease-out 0.25s both; }
+  .card-footer     { animation: rise 0.9s ease-out 0.5s both; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .monogram, .names, .tagline, .divider-mid, .card-footer { animation: none; }
+  }
+
+  /* Short landscape viewports: tighten the column */
+  @media (max-height: 560px) {
+    .bottom { height: clamp(120px, 22vh, 180px); }
+  }
+
+  /* ===== Music toggle ===== */
+  .music-toggle {
+    position: fixed;
+    z-index: 10;
+    top: max(16px, env(safe-area-inset-top));
+    right: max(16px, env(safe-area-inset-right));
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid color-mix(in oklab, var(--gold) 40%, transparent);
+    background: color-mix(in oklab, var(--bg-glow) 85%, transparent);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: var(--gold);
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background .2s ease, transform .15s ease;
+  }
+  .music-toggle:hover { background: color-mix(in oklab, var(--bg-glow) 100%, transparent); }
+  .music-toggle:active { transform: scale(0.92); }
+  .music-toggle svg { width: 18px; height: 18px; display: block; }
+  .music-toggle .m-bars {
+    display: none;
+    align-items: flex-end;
+    gap: 3px;
+    width: 18px;
+    height: 16px;
+  }
+  .music-toggle .m-bars span {
+    width: 3px;
+    background: currentColor;
+    border-radius: 1px;
+    transform-origin: bottom;
+    animation: bar-bounce 0.85s ease-in-out infinite;
+  }
+  .music-toggle .m-bars span:nth-child(1) { height: 40%; animation-delay: -0.6s; }
+  .music-toggle .m-bars span:nth-child(2) { height: 100%; animation-delay: -0.3s; }
+  .music-toggle .m-bars span:nth-child(3) { height: 65%; animation-delay: 0s; }
+  .music-toggle.is-playing .m-note { display: none; }
+  .music-toggle.is-playing .m-bars { display: flex; }
+  @keyframes bar-bounce {
+    0%, 100% { transform: scaleY(0.35); }
+    50% { transform: scaleY(1); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .music-toggle .m-bars span { animation: none; transform: scaleY(0.7); }
+  }
+</style>
+</head>
+<body>
+<button id="musicToggle" class="music-toggle" type="button" aria-pressed="false" aria-label="Включить музыку">
+  <svg class="m-note" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M9 18V5l12-2v13"/>
+    <circle cx="6" cy="18" r="3"/>
+    <circle cx="18" cy="16" r="3"/>
+  </svg>
+  <span class="m-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+</button>
+<audio id="bgAudio" src="../assets/audio/wedding-web.mp3" loop preload="auto"></audio>
+
+<main class="card">
+  <section class="content">
+    <img class="monogram" src="../assets/monogram-aa-tulip.png" alt="Монограмма «А и А» — переплетённые кольца с тюльпаном" width="630" height="445"/>
+    <h1 class="names">
+      <span class="name">Александр</span>
+      <img class="divider divider-names" src="../assets/divider-diamond.svg" alt="" aria-hidden="true" width="400" height="48"/>
+      <span class="name">Адина</span>
+    </h1>
+    <p class="tagline">Будем рады вас видеть</p>
+    <img class="divider divider-mid" src="../assets/divider-diamond.svg" alt="" aria-hidden="true" width="400" height="48"/>
+  </section>
+
+  <div class="bottom">
+    <div class="mountains" aria-hidden="true"></div>
+    <footer class="card-footer">
+      <div class="date">26.09.2026</div>
+      <img class="divider divider-foot" src="../assets/divider-diamond.svg" alt="" aria-hidden="true" width="400" height="48"/>
+    </footer>
+  </div>
+</main>
+
+<script>
+  (function () {
+    var btn = document.getElementById('musicToggle');
+    var audio = document.getElementById('bgAudio');
+    if (!btn || !audio) return;
+
+    btn.addEventListener('click', function () {
+      if (audio.paused) {
+        audio.play().catch(function () {});
+      } else {
+        audio.pause();
+      }
+    });
+    audio.addEventListener('play', function () {
+      btn.classList.add('is-playing');
+      btn.setAttribute('aria-pressed', 'true');
+      btn.setAttribute('aria-label', 'Выключить музыку');
+    });
+    audio.addEventListener('pause', function () {
+      btn.classList.remove('is-playing');
+      btn.setAttribute('aria-pressed', 'false');
+      btn.setAttribute('aria-label', 'Включить музыку');
+    });
+
+    // Browsers block audio the visitor didn't ask for, so try to start right
+    // away, then fall back to the visitor's very first tap/key anywhere on
+    // the page (not just the button) the moment autoplay is blocked.
+    audio.play().catch(function () {});
+    var unlockEvents = ['pointerdown', 'keydown', 'touchstart'];
+    function unlock(e) {
+      unlockEvents.forEach(function (type) {
+        document.removeEventListener(type, unlock);
+      });
+      if (btn.contains(e.target)) return; // the button's own handler already owns this one
+      if (audio.paused) audio.play().catch(function () {});
+    }
+    unlockEvents.forEach(function (type) {
+      document.addEventListener(type, unlock);
+    });
+  })();
+</script>
+</body>
+</html>
