@@ -240,7 +240,6 @@
   </svg>
   <span class="m-bars" aria-hidden="true"><span></span><span></span><span></span></span>
 </button>
-<audio id="bgAudio" src="../assets/audio/wedding-web.mp3" loop preload="auto"></audio>
 
 <main class="card">
   <section class="content">
@@ -267,38 +266,90 @@
 <script>
   (function () {
     var btn = document.getElementById('musicToggle');
-    var audio = document.getElementById('bgAudio');
-    if (!btn || !audio) return;
+    if (!btn) return;
+
+    var AudioCtx = window.AudioContext || window.webkitAudioContext;
+    if (!AudioCtx) return; // no Web Audio support: skip music entirely rather than half-work
+
+    var ctx = new AudioCtx();
+    var buffer = null;
+    var source = null;
+    var loopStart = 0;
+    var loadPromise = null;
+    var playing = false;
+
+    function syncUI() {
+      btn.classList.toggle('is-playing', playing);
+      btn.setAttribute('aria-pressed', String(playing));
+      btn.setAttribute('aria-label', playing ? 'Выключить музыку' : 'Включить музыку');
+    }
+
+    // MP3 encoders pad the start of the file with a few milliseconds of
+    // silence; looping from sample 0 makes that silence audible as a stutter
+    // on every repeat. Skip straight to the first real sample instead.
+    function findLoopStart(buf) {
+      var data = buf.getChannelData(0);
+      var threshold = 0.01;
+      for (var i = 0; i < data.length; i++) {
+        if (Math.abs(data[i]) > threshold) return i / buf.sampleRate;
+      }
+      return 0;
+    }
+
+    function ensureLoaded() {
+      if (!loadPromise) {
+        loadPromise = fetch('../assets/audio/wedding-web.mp3')
+          .then(function (res) { return res.arrayBuffer(); })
+          .then(function (data) { return ctx.decodeAudioData(data); })
+          .then(function (decoded) {
+            buffer = decoded;
+            loopStart = findLoopStart(decoded);
+          });
+      }
+      return loadPromise;
+    }
+
+    function play() {
+      return ensureLoaded().then(function () {
+        if (!source) {
+          source = ctx.createBufferSource();
+          source.buffer = buffer;
+          source.loop = true;
+          source.loopStart = loopStart;
+          source.loopEnd = buffer.duration;
+          source.connect(ctx.destination);
+          source.start(0, loopStart);
+        }
+        if (ctx.state === 'suspended') {
+          return ctx.resume().catch(function () {});
+        }
+      }).then(function () {
+        playing = ctx.state === 'running';
+        syncUI();
+      });
+    }
+
+    function pause() {
+      if (ctx.state === 'running') ctx.suspend();
+      playing = false;
+      syncUI();
+    }
 
     btn.addEventListener('click', function () {
-      if (audio.paused) {
-        audio.play().catch(function () {});
-      } else {
-        audio.pause();
-      }
-    });
-    audio.addEventListener('play', function () {
-      btn.classList.add('is-playing');
-      btn.setAttribute('aria-pressed', 'true');
-      btn.setAttribute('aria-label', 'Выключить музыку');
-    });
-    audio.addEventListener('pause', function () {
-      btn.classList.remove('is-playing');
-      btn.setAttribute('aria-pressed', 'false');
-      btn.setAttribute('aria-label', 'Включить музыку');
+      if (playing) { pause(); } else { play().catch(function () {}); }
     });
 
     // Browsers block audio the visitor didn't ask for, so try to start right
     // away, then fall back to the visitor's very first tap/key anywhere on
     // the page (not just the button) the moment autoplay is blocked.
-    audio.play().catch(function () {});
+    play().catch(function () {});
     var unlockEvents = ['pointerdown', 'keydown', 'touchstart'];
     function unlock(e) {
       unlockEvents.forEach(function (type) {
         document.removeEventListener(type, unlock);
       });
       if (btn.contains(e.target)) return; // the button's own handler already owns this one
-      if (audio.paused) audio.play().catch(function () {});
+      if (!playing) play().catch(function () {});
     }
     unlockEvents.forEach(function (type) {
       document.addEventListener(type, unlock);
